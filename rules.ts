@@ -62,25 +62,37 @@ const rules: KarabinerRules[] = [
 
     // b = "B"rowse
     b: {
-      t: open("https://twitter.com"),
-      r: open("https://reddit.com"),
+      b: open("https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"),
+      c: open("https://andsafe.atlassian.net/wiki/home"),
     },
     
-    // o = "Open" applications
+    // o = "O"pen applications
     o: {
+      b: app("Google Chrome"), //browser
+      c: app("ChatGPT"),
       e: app("Enpass"),
-      c: app("Google Chrome"),
-      v: app("Visual Studio Code"),
-      s: app("Slack"),
-      n: app("Notion"),
-      t: app("Microsoft Teams"),
       f: app("Finder"),
-      p: app("Spotify"),
-      a: app("iA Presenter"),
+      i: app("IntelliJ IDEA CE"),
+      n: app("Notion"),
+      m: app("Miro"),
+      r: app("Raycast"),
+      s: app("Spotify"),
+      t: app("Todoist"),
+      v: app("Visual Studio Code"),
       w: app("WhatsApp"),
+      // Figma, Karabiner, Adobe, Slack, Filezilla, Sublime, Terminal, VPN
     },
 
-    // s = "System"
+    // m = "M"icrosoft applications
+    m: {
+      e: app("Microsoft Excel"),
+      o: app("Microsoft Outlook"),
+      p: app("Microsoft PowerPoint"),
+      t: app("Microsoft Teams"),
+      w: app("Microsoft Word"),
+    },
+
+    // s = "S"ystem
     s: {
       u: {
         to: [

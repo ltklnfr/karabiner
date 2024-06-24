@@ -3,6 +3,64 @@ import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
 const rules: KarabinerRules[] = [
+  // {
+  //   "description": "double-tap left shift key → caps lock toggle",
+  //   "manipulators": [{
+  //       "conditions": [{
+  //         "name": "left_shift pressed",
+  //         "type": "variable_if",
+  //         "value": 1
+  //       }],
+  //       "from": {
+  //         "key_code": "left_shift",
+  //         "modifiers": {
+  //           "optional": [
+  //             "any"
+  //           ]
+  //         }
+  //       },
+  //       "to": [{
+  //         "key_code": "caps_lock"
+  //       }],
+  //       "type": "basic"
+  //     },
+  //     {
+  //       "from": {
+  //         "key_code": "left_shift",
+  //         "modifiers": {
+  //           "optional": [
+  //             "any"
+  //           ]
+  //         }
+  //       },
+  //       "to": [{
+  //           "set_variable": {
+  //             "name": "left_shift pressed",
+  //             "value": 1
+  //           }
+  //         },
+  //         {
+  //           "key_code": "left_shift"
+  //         }
+  //       ],
+  //       // "to_delayed_action": {
+  //       //   "to_if_canceled": [{
+  //       //     "set_variable": {
+  //       //       "name": "left_shift pressed",
+  //       //       "value": 0
+  //       //     }
+  //       //   }],
+  //       //   "to_if_invoked": [{
+  //       //     "set_variable": {
+  //       //       "name": "left_shift pressed",
+  //       //       "value": 0
+  //       //     }
+  //       //   }]
+  //       // },
+  //       "type": "basic"
+  //     }
+  //   ]
+  // },
   // Define the Hyper key itself
   {
     description: "Hyper Key (⌃⌥⇧⌘)",
@@ -74,6 +132,18 @@ const rules: KarabinerRules[] = [
       d: open("~/Downloads"),
       // d: open("~/Library/CloudStorage/OneDrive-FreigegebeneBibliotheken–andsafeAG/Design - General"),
     },
+
+    // m = "M"icrosoft applications
+    m: {
+      e: app("Microsoft Excel"),
+      // Microsoft Outlook Kalendar
+      k: app("raycast://script-commands/open-kalender"),
+      // Microsoft Outlook E-Mail
+      o: open("raycast://script-commands/open-mail"),
+      p: app("Microsoft PowerPoint"),
+      t: app("Microsoft Teams"),
+      w: app("Microsoft Word"),
+    },
     
     // o = "O"pen applications
     o: {
@@ -91,15 +161,6 @@ const rules: KarabinerRules[] = [
       v: app("Visual Studio Code"),
       w: app("WhatsApp"),
       // Finder, Adobe, Slack, Filezilla, Sublime, Terminal, VPN
-    },
-
-    // m = "M"icrosoft applications
-    m: {
-      e: app("Microsoft Excel"),
-      o: app("Microsoft Outlook"),
-      p: app("Microsoft PowerPoint"),
-      t: app("Microsoft Teams"),
-      w: app("Microsoft Word"),
     },
 
     // s = "S"ystem
@@ -158,6 +219,7 @@ fs.writeFileSync(
           name: "Default",
           complex_modifications: {
             rules,
+
           },
         },
       ],

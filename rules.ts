@@ -3,64 +3,6 @@ import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
 const rules: KarabinerRules[] = [
-  // {
-  //   "description": "double-tap left shift key → caps lock toggle",
-  //   "manipulators": [{
-  //       "conditions": [{
-  //         "name": "left_shift pressed",
-  //         "type": "variable_if",
-  //         "value": 1
-  //       }],
-  //       "from": {
-  //         "key_code": "left_shift",
-  //         "modifiers": {
-  //           "optional": [
-  //             "any"
-  //           ]
-  //         }
-  //       },
-  //       "to": [{
-  //         "key_code": "caps_lock"
-  //       }],
-  //       "type": "basic"
-  //     },
-  //     {
-  //       "from": {
-  //         "key_code": "left_shift",
-  //         "modifiers": {
-  //           "optional": [
-  //             "any"
-  //           ]
-  //         }
-  //       },
-  //       "to": [{
-  //           "set_variable": {
-  //             "name": "left_shift pressed",
-  //             "value": 1
-  //           }
-  //         },
-  //         {
-  //           "key_code": "left_shift"
-  //         }
-  //       ],
-  //       // "to_delayed_action": {
-  //       //   "to_if_canceled": [{
-  //       //     "set_variable": {
-  //       //       "name": "left_shift pressed",
-  //       //       "value": 0
-  //       //     }
-  //       //   }],
-  //       //   "to_if_invoked": [{
-  //       //     "set_variable": {
-  //       //       "name": "left_shift pressed",
-  //       //       "value": 0
-  //       //     }
-  //       //   }]
-  //       // },
-  //       "type": "basic"
-  //     }
-  //   ]
-  // },
   // Define the Hyper key itself
   {
     description: "Hyper Key (⌃⌥⇧⌘)",
@@ -79,6 +21,15 @@ const rules: KarabinerRules[] = [
               name: "hyper",
               value: 1,
             },
+          },
+          // set all key_codes to use caps_lock as hyper without layers
+          {
+            key_code: "left_command",
+            modifiers: [
+                "left_shift",
+                "left_option",
+                "left_control"
+            ],
           },
         ],
         to_after_key_up: [
@@ -114,21 +65,39 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-    ),
+    // spacebar: open(
+    //   "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+    // ),
 
-    // b = "B"rowse
-    b: {
-      c: open("https://andsafe.atlassian.net/wiki/home"),
-      g: open("https://github.com/ltklnfr?tab=repositoriese"),
-      s: open("https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"),
-      t: open("https://app.todoist.com/app/project/brain-dump-6VFF3crCjX3pf6gV"),
+    // a = "A"pplications
+    a: {
+      c: app("ChatGPT"),
+      e: app("Enpass"),
+      f: app("Figma"),
+      g: app("Google Chrome"), 
+      i: app("IntelliJ IDEA CE"),
+      j: app("Microsoft Teams"),
+      k: app("Terminal"),
+      m: app("Miro"),
+      n: app("Notion"),
+      o: open("raycast://script-commands/open-mail"),
+      p: open("raycast://script-commands/open-kalender"),
+      r: app("Raycast"),
+      s: app("Spotify"),
+      t: app("Terminal"),
+      v: app("Visual Studio Code"),
+      w: app("WhatsApp"),
+    },
+
+    // w = "W"eb
+    w: {
+      c: open("contentful"),
+      j: open("https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"),
     },
     
     // f = "F"inder
     f: {
-      spacebar: app("finder"),
+      spacebar: app("Finder"),
       d: open("~/Downloads"),
       // d: open("~/Library/CloudStorage/OneDrive-FreigegebeneBibliotheken–andsafeAG/Design - General"),
     },
@@ -137,7 +106,7 @@ const rules: KarabinerRules[] = [
     m: {
       e: app("Microsoft Excel"),
       // Microsoft Outlook Kalendar
-      k: app("raycast://script-commands/open-kalender"),
+      k: open("raycast://script-commands/open-kalender"),
       // Microsoft Outlook E-Mail
       o: open("raycast://script-commands/open-mail"),
       p: app("Microsoft PowerPoint"),
@@ -150,7 +119,7 @@ const rules: KarabinerRules[] = [
       b: app("Google Chrome"), //browser
       c: app("ChatGPT"),
       e: app("Enpass"),
-      f: app("FIgma"),
+      f: app("Figma"),
       i: app("IntelliJ IDEA CE"),
       k: app("Karabiner-Elements"),
       n: app("Notion"),

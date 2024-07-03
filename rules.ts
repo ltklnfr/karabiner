@@ -66,17 +66,17 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
     // spacebar: open(
-    //   "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+    //   open("raycast://extensions/raycast/window-management/maximize"),
     // ),
 
     // a = "A"pplications
     a: {
+      spacebar: app("Microsoft Teams"),
       c: app("ChatGPT"),
       e: app("Enpass"),
       f: app("Figma"),
       g: app("Google Chrome"), 
       i: app("IntelliJ IDEA CE"),
-      j: app("Microsoft Teams"),
       k: app("Terminal"),
       m: app("Miro"),
       n: app("Notion"),
@@ -84,94 +84,67 @@ const rules: KarabinerRules[] = [
       p: open("raycast://script-commands/open-kalender"),
       r: app("Raycast"),
       s: app("Spotify"),
-      t: app("Terminal"),
+      // t: app("Terminal"),
       v: app("Visual Studio Code"),
       w: app("WhatsApp"),
-    },
-
-    // w = "W"eb
-    w: {
-      c: open("contentful"),
-      j: open("https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"),
     },
     
     // f = "F"inder
     f: {
       spacebar: app("Finder"),
-      d: open("~/Downloads"),
-      // d: open("~/Library/CloudStorage/OneDrive-FreigegebeneBibliotheken–andsafeAG/Design - General"),
+      j: open("~/Downloads"),
+      // k: open("~/Library/CloudStorage/OneDrive-FreigegebeneBibliotheken–andsafeAG/Design - General"),
     },
 
-    // m = "M"icrosoft applications
-    m: {
-      e: app("Microsoft Excel"),
-      // Microsoft Outlook Kalendar
-      k: open("raycast://script-commands/open-kalender"),
-      // Microsoft Outlook E-Mail
-      o: open("raycast://script-commands/open-mail"),
-      p: app("Microsoft PowerPoint"),
-      t: app("Microsoft Teams"),
-      w: app("Microsoft Word"),
-    },
-    
-    // o = "O"pen applications
-    o: {
-      b: app("Google Chrome"), //browser
-      c: app("ChatGPT"),
-      e: app("Enpass"),
-      f: app("Figma"),
-      i: app("IntelliJ IDEA CE"),
-      k: app("Karabiner-Elements"),
-      n: app("Notion"),
-      m: app("Miro"),
-      r: app("Raycast"),
-      s: app("Spotify"),
-      t: app("Todoist"),
-      v: app("Visual Studio Code"),
-      w: app("WhatsApp"),
-      // Finder, Adobe, Slack, Filezilla, Sublime, Terminal, VPN
+    // r = "R"aycast
+    r: {
+      e: open("raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"),
+      p: open("raycast://extensions/raycast/raycast/confetti"),
     },
 
     // s = "S"ystem
     s: {
-      u: {
+      spacebar: app("Systemeinstellungen"),
+      i: {
         to: [
           {
             key_code: "volume_increment",
           },
         ],
       },
-      j: {
+      k: {
         to: [
           {
             key_code: "volume_decrement",
           },
         ],
       },
-      i: {
-        to: [
-          {
-            key_code: "display_brightness_increment",
-          },
-        ],
-      },
-      k: {
-        to: [
-          {
-            key_code: "display_brightness_decrement",
-          },
-        ],
-      },
-      // "T"heme
+      // u: {
+      //   to: [
+      //     {
+      //       key_code: "display_brightness_increment",
+      //     },
+      //   ],
+      // },
+      // j: {
+      //   to: [
+      //     {
+      //       key_code: "display_brightness_decrement",
+      //     },
+      //   ],
+      // },
+      l: open(`raycast://extensions/raycast/system/lock-screen`),
       t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
     },
 
-    // r = "R"aycast
-    r: {
-      c: open("raycast://extensions/thomas/color-picker/pick-color"),
-      e: open("raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"),
-      p: open("raycast://extensions/raycast/raycast/confetti"),
-      h: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
+    // w = "W"eb
+    w: {
+      spacebar: app("Google Chrome"),
+      c: open("https://app.contentful.com/spaces/4b9zk5bbf1ft/views/entries"),
+      g: open("https://github.com/ltklnfr"),
+      j: open("https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"),
+      k: open("https://calendar.google.com/calendar/u/0/r/"),
+      m: open("https://mail.google.com/mail/u/0/#inbox"),
     },
   }),
 ];

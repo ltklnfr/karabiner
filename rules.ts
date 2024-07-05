@@ -47,21 +47,21 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      // {
-      //   type: "basic",
-      //   description: "Disable CMD + Tab to force Hyper Key usage",
-      //   from: {
-      //     key_code: "tab",
-      //     modifiers: {
-      //       mandatory: ["left_command"],
-      //     },
-      //   },
-      //   to: [
-      //     {
-      //       key_code: "tab",
-      //     },
-      //   ],
-      // },
+      {
+        type: "basic",
+        description: "Disable CMD + Tab to force Hyper Key usage",
+        from: {
+          key_code: "tab",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "tab",
+          },
+        ],
+      },
     ],
   },
   ...createHyperSubLayers({
@@ -77,14 +77,13 @@ const rules: KarabinerRules[] = [
       f: app("Figma"),
       g: app("Google Chrome"), 
       i: app("IntelliJ IDEA CE"),
-      k: app("Terminal"),
-      m: app("Miro"),
+      j: app("Terminal"),
+      k: open("raycast://script-commands/open-outlook-calendar"),
+      m: open("raycast://script-commands/open-outlook-mail"),
       n: app("Notion"),
-      o: open("raycast://script-commands/open-mail"),
-      p: open("raycast://script-commands/open-kalender"),
+      p: app("Bitwarden"), // Password
       r: app("Raycast"),
-      s: app("Spotify"),
-      // t: app("Terminal"),
+      s: app("Slack"),
       v: app("Visual Studio Code"),
       w: app("WhatsApp"),
     },
@@ -140,11 +139,12 @@ const rules: KarabinerRules[] = [
     // w = "W"eb
     w: {
       spacebar: app("Google Chrome"),
-      c: open("https://app.contentful.com/spaces/4b9zk5bbf1ft/views/entries"),
-      g: open("https://github.com/ltklnfr"),
-      j: open("https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"),
-      k: open("https://calendar.google.com/calendar/u/0/r/"),
-      m: open("https://mail.google.com/mail/u/0/#inbox"),
+      c: open("raycast://script-commands/open-chrome-tab?arguments=app.contentful.com"),
+      g: open("raycast://script-commands/open-chrome-tab?arguments=github.com/ltklnfr"),
+      j: open("raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187"),
+      k: open("raycast://script-commands/open-chrome-tab?arguments=calendar.google.com"),
+      m: open("raycast://script-commands/open-chrome-tab?arguments=mail.google.com"),
+      u: open("raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/UXUI/boards/198"),
     },
   }),
 ];

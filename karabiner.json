@@ -50,6 +50,23 @@
                   }
                 ],
                 "type": "basic"
+              },
+              {
+                "type": "basic",
+                "description": "Disable CMD + Tab to force Hyper Key usage",
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "tab"
+                  }
+                ]
               }
             ]
           },
@@ -264,6 +281,30 @@
                 "description": "Open -a 'Terminal.app'",
                 "type": "basic",
                 "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_a",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://script-commands/open-outlook-calendar"
+                  }
+                ],
+                "description": "Open raycast://script-commands/open-outlook-calendar",
+                "type": "basic",
+                "from": {
                   "key_code": "k",
                   "modifiers": {
                     "optional": [
@@ -282,10 +323,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Miro.app'"
+                    "shell_command": "open raycast://script-commands/open-outlook-mail"
                   }
                 ],
-                "description": "Open -a 'Miro.app'",
+                "description": "Open raycast://script-commands/open-outlook-mail",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
@@ -330,34 +371,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://script-commands/open-mail"
+                    "shell_command": "open -a 'Bitwarden.app'"
                   }
                 ],
-                "description": "Open raycast://script-commands/open-mail",
-                "type": "basic",
-                "from": {
-                  "key_code": "o",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_a",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://script-commands/open-kalender"
-                  }
-                ],
-                "description": "Open raycast://script-commands/open-kalender",
+                "description": "Open -a 'Bitwarden.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "p",
@@ -402,10 +419,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Spotify.app'"
+                    "shell_command": "open -a 'Slack.app'"
                   }
                 ],
-                "description": "Open -a 'Spotify.app'",
+                "description": "Open -a 'Slack.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "s",
@@ -952,10 +969,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://app.contentful.com/spaces/4b9zk5bbf1ft/views/entries"
+                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=app.contentful.com"
                   }
                 ],
-                "description": "Open https://app.contentful.com/spaces/4b9zk5bbf1ft/views/entries",
+                "description": "Open raycast://script-commands/open-chrome-tab?arguments=app.contentful.com",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -976,10 +993,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://github.com/ltklnfr"
+                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=github.com/ltklnfr"
                   }
                 ],
-                "description": "Open https://github.com/ltklnfr",
+                "description": "Open raycast://script-commands/open-chrome-tab?arguments=github.com/ltklnfr",
                 "type": "basic",
                 "from": {
                   "key_code": "g",
@@ -1000,10 +1017,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog"
+                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187"
                   }
                 ],
-                "description": "Open https://andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187/backlog",
+                "description": "Open raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -1024,10 +1041,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://calendar.google.com/calendar/u/0/r/"
+                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=calendar.google.com"
                   }
                 ],
-                "description": "Open https://calendar.google.com/calendar/u/0/r/",
+                "description": "Open raycast://script-commands/open-chrome-tab?arguments=calendar.google.com",
                 "type": "basic",
                 "from": {
                   "key_code": "k",
@@ -1048,13 +1065,37 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://mail.google.com/mail/u/0/#inbox"
+                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=mail.google.com"
                   }
                 ],
-                "description": "Open https://mail.google.com/mail/u/0/#inbox",
+                "description": "Open raycast://script-commands/open-chrome-tab?arguments=mail.google.com",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/UXUI/boards/198"
+                  }
+                ],
+                "description": "Open raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/UXUI/boards/198",
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
                   "modifiers": {
                     "optional": [
                       "any"

@@ -44,6 +44,11 @@
                     }
                   }
                 ],
+                "to_if_alone": [
+                  {
+                    "key_code": "escape"
+                  }
+                ],
                 "type": "basic"
               },
               {
@@ -330,30 +335,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_a",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/raycast/navigation/switch-windows"
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/navigation/switch-windows",
-                "type": "basic",
-                "from": {
-                  "key_code": "o",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1205,30 +1186,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "g",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://script-commands/open-chrome-tab?arguments=app.invoiz.de"
-                  }
-                ],
-                "description": "Open raycast://script-commands/open-chrome-tab?arguments=app.invoiz.de",
-                "type": "basic",
-                "from": {
-                  "key_code": "i",
                   "modifiers": {
                     "optional": [
                       "any"

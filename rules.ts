@@ -22,7 +22,6 @@ const rules: KarabinerRules[] = [
               value: 1,
             },
           },
-          // set all key_codes to use caps_lock as hyper without layers
           {
             key_code: "left_command",
             modifiers: [
@@ -40,11 +39,11 @@ const rules: KarabinerRules[] = [
             },
           },
         ],
-        to_if_alone: [
-          {
-            key_code: "escape",
-          },
-        ],
+        // to_if_alone: [
+        //   {
+        //     key_code: "escape",
+        //   },
+        // ],
         type: "basic",
       },
       {
@@ -62,6 +61,21 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      // {
+      //   type: "basic",
+      //   description: "Set Hotkey for Standard-Password",
+      //   from: {
+      //     key_code: "spacebar",
+      //     modifiers: {
+      //       mandatory: ["left_command"],
+      //     },
+      //   },
+      //   to: [
+      //     {
+      //       key_code: "spacebar",
+      //     },
+      //   ],
+      // },
     ],
   },
   ...createHyperSubLayers({
@@ -75,12 +89,12 @@ const rules: KarabinerRules[] = [
       c: app("ChatGPT"),
       e: app("Enpass"),
       f: app("Figma"),
-      g: app("Google Chrome"), 
       i: app("IntelliJ IDEA CE"),
       j: app("Terminal"),
       k: open("raycast://script-commands/open-outlook-calendar"),
       m: open("raycast://script-commands/open-outlook-mail"),
       n: app("Notion"),
+      o: open("raycast://extensions/raycast/navigation/switch-windows"), // Open Window
       p: app("Bitwarden"), // Password
       r: app("Raycast"),
       s: app("Slack"),
@@ -92,7 +106,47 @@ const rules: KarabinerRules[] = [
     f: {
       spacebar: app("Finder"),
       j: open("~/Downloads"),
-      // k: open("~/Library/CloudStorage/OneDrive-FreigegebeneBibliotheken–andsafeAG/Design - General"),
+      k: open("~/OneDriveDesignGeneral"), // Symlink
+    },
+
+    // q = "Q"uick
+    q: {
+      spacebar: open("raycast://extensions/raycast/raycast/confetti"), // Later make Quicklink Script Command
+      m: open("raycast://script-commands/whatsapp-miriam"),
+      // is not working
+      // n: {
+      //   to: [
+      //     {
+      //       key_code: "t",
+      //       modifiers: ["left_shift"],
+      //     },
+      //     {
+      //       key_code: "e",
+      //     },
+      //     {
+      //       key_code: "s",
+      //     },
+      //     {
+      //       key_code: "t",
+      //     },
+      //     {
+      //       key_code: "1",
+      //     },
+      //     {
+      //       key_code: "2",
+      //     },
+      //     {
+      //       key_code: "3",
+      //     },
+      //     {
+      //       key_code: "4",
+      //     },
+      //     {
+      //       key_code: "1",
+      //       modifiers: ["left_shift"],
+      //     },
+      //   ],
+      // },
     },
 
     // r = "R"aycast
@@ -139,11 +193,15 @@ const rules: KarabinerRules[] = [
     // w = "W"eb
     w: {
       spacebar: app("Google Chrome"),
+      a: open("raycast://script-commands/open-chrome-tab?arguments=andsafe-sso.awsapps.com/start#/"),
       c: open("raycast://script-commands/open-chrome-tab?arguments=app.contentful.com"),
+      d: open("raycast://script-commands/open-chrome-tab?arguments=dribbble.com"),
       g: open("raycast://script-commands/open-chrome-tab?arguments=github.com/ltklnfr"),
+      i: open("raycast://script-commands/open-chrome-tab?arguments=app.invoiz.de"),
       j: open("raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/CURE/boards/187"),
       k: open("raycast://script-commands/open-chrome-tab?arguments=calendar.google.com"),
       m: open("raycast://script-commands/open-chrome-tab?arguments=mail.google.com"),
+      o: open("raycast://script-commands/open-chrome-tab?arguments=andsafe1129.zendesk.com"),
       u: open("raycast://script-commands/open-chrome-tab?arguments=andsafe.atlassian.net/jira/software/c/projects/UXUI/boards/198"),
     },
   }),

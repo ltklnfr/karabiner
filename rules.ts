@@ -111,7 +111,7 @@ const rules: KarabinerRules[] = [
 
     // q = "Q"uick
     q: {
-      spacebar: open("raycast://extensions/raycast/raycast/confetti"), // Later make Quicklink Script Command
+      spacebar: open("raycast://extensions/ltklnfr/open-everything/shortcut"),
       m: open("raycast://script-commands/whatsapp-miriam"),
       // is not working
       // n: {

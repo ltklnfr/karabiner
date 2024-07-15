@@ -693,10 +693,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/raycast/confetti"
+                    "shell_command": "open raycast://extensions/ltklnfr/open-everything/shortcut"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/raycast/confetti",
+                "description": "Open raycast://extensions/ltklnfr/open-everything/shortcut",
                 "type": "basic",
                 "from": {
                   "key_code": "spacebar",

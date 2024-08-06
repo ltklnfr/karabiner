@@ -47,6 +47,40 @@ const rules: KarabinerRules[] = [
         type: "basic",
       },
       {
+        description: "Caps Lock -> Hyper Key",
+        from: {
+          key_code: "right_command",
+          modifiers: {
+            optional: ["any"],
+          },
+        },
+        to: [
+          {
+            set_variable: {
+              name: "hyper",
+              value: 1,
+            },
+          },
+          {
+            key_code: "left_command",
+            modifiers: [
+                "left_shift",
+                "left_option",
+                "left_control"
+            ],
+          },
+        ],
+        to_after_key_up: [
+          {
+            set_variable: {
+              name: "hyper",
+              value: 0,
+            },
+          },
+        ],
+        type: "basic",
+      },
+      {
         type: "basic",
         description: "Disable CMD + Tab to force Hyper Key usage",
         from: {
@@ -57,7 +91,8 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            key_code: "tab",
+            // key_code: "tab",
+            shell_command: "open raycast://extensions/raycast/navigation/switch-windows"
           },
         ],
       },
@@ -79,9 +114,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    // spacebar: open(
-    //   open("raycast://extensions/raycast/window-management/maximize"),
-    // ),
+    tab: open("raycast://extensions/raycast/navigation/switch-windows"),
 
     // a = "A"pplications
     a: {
@@ -92,61 +125,43 @@ const rules: KarabinerRules[] = [
       i: app("IntelliJ IDEA CE"),
       j: app("Terminal"),
       k: open("raycast://script-commands/open-outlook-calendar"),
-      m: open("raycast://script-commands/open-outlook-mail"),
+      m: app("Miro"),
       n: app("Notion"),
-      o: open("raycast://extensions/raycast/navigation/switch-windows"), // Open Window
-      p: app("Bitwarden"), // Password
+      o: open("raycast://script-commands/open-outlook-mail"),
+      // o: open("raycast://extensions/raycast/navigation/switch-windows"), // Open Window
       r: app("Raycast"),
       s: app("Slack"),
+      t: app("Todoist"),
       v: app("Visual Studio Code"),
       w: app("WhatsApp"),
+    },
+
+    // c = Adobe "C"reative "C"loud
+    c: {
+      spacebar: app("Adobe Acrobat"),
+      i: app("Adobe InDesign 2024"),
+      p: app("Adobe Photoshop 2024"),
+      l: app("Adobe Illustrator"),
     },
     
     // f = "F"inder
     f: {
       spacebar: app("Finder"),
       j: open("~/Downloads"),
+      g: open("~/github"),
       k: open("~/OneDriveDesignGeneral"), // Symlink
     },
+
+    // m = "M"icrosoft
+    // m: {
+    //   e: app("Microsoft Excel"),
+    //   w: app("Microsoft Word"),
+    // },
 
     // q = "Q"uick
     q: {
       spacebar: open("raycast://extensions/ltklnfr/open-everything/shortcut"),
       m: open("raycast://script-commands/whatsapp-miriam"),
-      // is not working
-      // n: {
-      //   to: [
-      //     {
-      //       key_code: "t",
-      //       modifiers: ["left_shift"],
-      //     },
-      //     {
-      //       key_code: "e",
-      //     },
-      //     {
-      //       key_code: "s",
-      //     },
-      //     {
-      //       key_code: "t",
-      //     },
-      //     {
-      //       key_code: "1",
-      //     },
-      //     {
-      //       key_code: "2",
-      //     },
-      //     {
-      //       key_code: "3",
-      //     },
-      //     {
-      //       key_code: "4",
-      //     },
-      //     {
-      //       key_code: "1",
-      //       modifiers: ["left_shift"],
-      //     },
-      //   ],
-      // },
     },
 
     // r = "R"aycast

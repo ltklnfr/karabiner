@@ -162,6 +162,7 @@ const rules: KarabinerRules[] = [
     q: {
       spacebar: open("raycast://extensions/ltklnfr/open-everything/shortcut"),
       m: open("raycast://script-commands/whatsapp-miriam"),
+      n: open("raycast://extensions/raycast/floating-notes/toggle-floating-notes-window"),
     },
 
     // r = "R"aycast
